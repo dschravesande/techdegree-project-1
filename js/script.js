@@ -34,14 +34,14 @@ let quotes = [
   {
     quote: "Code smells.",
     source: "Martin Fowler"
-  },
+  }
 ]
 
 /***
  * `getRandomQuote` function
 ***/
 function getRandomQuote() {
-  let randomNumber = Math.floor( Math.random() * quotes.length + 1)
+  let randomNumber = Math.floor( Math.random() * quotes.length)
   return quotes[randomNumber]
 }
 
@@ -52,7 +52,22 @@ function getRandomQuote() {
 function printQuote() {
   let randomQuote = getRandomQuote()
   let htmlString = ''
+  
+  htmlString.concat('<p class="quote">', randomQuote.quote, '</p>')
+
+  htmlString.concat('<p class="source">', randomQuote.source)
+  if (randomQuote.citation) {
+    htmlString.concat('<span class="citation">', randomQuote.citation, '</span>')
+  }
+  if (randomQuote.year) {
+    htmlString.concat('<span class="year">', randomQuote.year, '</span>')
+  }
+  htmlString.concat('</p>')
+
+  document.getElementById('quote-box').innerHTML = htmlString
 }
+
+console.log(printQuote())
 
 /***
  * click event listener for the print quote button
