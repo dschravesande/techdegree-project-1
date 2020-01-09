@@ -52,22 +52,22 @@ function getRandomQuote() {
 function printQuote() {
   let randomQuote = getRandomQuote()
   let htmlString = ''
-  
-  htmlString.concat('<p class="quote">', randomQuote.quote, '</p>')
 
-  htmlString.concat('<p class="source">', randomQuote.source)
+  htmlString += '<p class="quote">' + randomQuote.quote + '</p>'
+  htmlString += '<p class="source">' + randomQuote.source
+
   if (randomQuote.citation) {
-    htmlString.concat('<span class="citation">', randomQuote.citation, '</span>')
+    htmlString += '<span class="citation">' + randomQuote.citation + '</span>'
   }
   if (randomQuote.year) {
-    htmlString.concat('<span class="year">', randomQuote.year, '</span>')
+    htmlString += '<span class="year">' + randomQuote.year + '</span>'
   }
-  htmlString.concat('</p>')
+
+  htmlString += '</p>'
 
   document.getElementById('quote-box').innerHTML = htmlString
-}
 
-console.log(printQuote())
+}
 
 /***
  * click event listener for the print quote button
