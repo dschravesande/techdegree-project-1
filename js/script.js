@@ -53,17 +53,17 @@ function printQuote() {
   let randomQuote = getRandomQuote()
   let htmlString = ''
 
-  htmlString += '<p class="quote">' + randomQuote.quote + '</p>'
-  htmlString += '<p class="source">' + randomQuote.source
+  htmlString += `<p class="quote">${randomQuote.quote}</p>`
+  htmlString += `<p class="source">${randomQuote.source}`
 
   if (randomQuote.citation) {
-    htmlString += '<span class="citation">' + randomQuote.citation + '</span>'
+    htmlString += `<span class="citation">${randomQuote.citation}</span>`
   }
   if (randomQuote.year) {
-    htmlString += '<span class="year">' + randomQuote.year + '</span>'
+    htmlString += `<span class="year">${randomQuote.year}</span>`
   }
 
-  htmlString += '</p>'
+  htmlString += `</p>`
 
   document.getElementById('quote-box').innerHTML = htmlString
 
