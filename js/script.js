@@ -10,6 +10,7 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+//this array includes five objects that each include a quote with source. Two also have citation and year
 let quotes = [
   {
     quote: "One man's crappy software is another man's full time job.",
@@ -40,6 +41,7 @@ let quotes = [
 /***
  * `getRandomQuote` function
 ***/
+//this function will generate and return a random number between 0 and the number of objects in the quotes array
 function getRandomQuote() {
   let randomNumber = Math.floor( Math.random() * quotes.length)
   return quotes[randomNumber]
@@ -48,7 +50,7 @@ function getRandomQuote() {
 /***
  * `printQuote` function
 ***/
-
+//This function wil recall the getRandomQuote function and add the values of objecte quotes to an html string
 function printQuote() {
   let randomQuote = getRandomQuote()
   let htmlString = ''
